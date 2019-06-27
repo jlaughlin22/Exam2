@@ -5,6 +5,7 @@
 #include <string>
 #include "BaseballEvent.h"
 #include "WorldcupEvent.h"
+#include "EsportsEvent.h"
 
 /**
 * The Event Factory
@@ -24,7 +25,10 @@ public:
 		} 
 		else if (type == "baseball") { // Creates a baseball game
 			return new BaseballEvent(hometeam, visitingteam);
-		} 
+		}
+		else if (type == "esport") { // Creates a esports game
+			return new EsportsEvent(hometeam, visitingteam);
+		}  
 		else
 			throw std::invalid_argument("unknown type of event");
 	}

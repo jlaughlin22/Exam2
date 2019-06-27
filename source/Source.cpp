@@ -24,10 +24,10 @@ int main()
 	events[0] = EventFactory::factory("worldcup", "germany", "mexico"); // Create a worldcup match with the event factory
 	events[1] = EventFactory::factory("baseball", "everett", "spokane");
 	//FIXME 5a: generate an event object for your new kind of event
-	// events[2] = ???
+	events[2] = EventFactory::factory("esport", "TSM", "EnVyUs");
 
 	//Let's go through and test each one
-	for (int i=0; i<EVENT_COUNT-1; i++) {
+	for (int i=0; i<EVENT_COUNT; i++) {
 		// Let's add a couple of people to the match, and store their tickets in variables
 		EventTicket *ticket1 = events[i]->add("Mike");
 		EventTicket *ticket2 = events[i]->add("Jane");
@@ -36,7 +36,12 @@ int main()
 		EventTicket *ticket5 = events[i]->add("Emma");
 		EventTicket *ticket6 = events[i]->add("Jake");
 
-		//cout << "This is a " << typeid(*events[i]) << " event.";
+		if (typeid(WorldcupEvent) == typeid(*events[i]))
+			cout << "\n\tThe following event is a Worldcup match." << endl;
+		if (typeid(BaseballEvent) == typeid(*events[i]))
+			cout << "\n\tThe following event is a Baseball game." << endl;
+		if (typeid(EsportsEvent) == typeid(*events[i]))
+			cout << "\n\tThe following event is an Esports game." << endl;
 
 		cout << "\nEvent before Jane leaves\n";
 		events[i]->list(); // List the people currently at the event
@@ -52,6 +57,8 @@ int main()
 			dynamic_cast<BaseballEvent *>(events[i])->stretch();
 		
 		//FIXME 5c: if this is your event, include a call to your event's special behavior
+		if (typeid(EsportsEvent) == typeid(*events[i]))
+			dynamic_cast<EsportsEvent *>(events[i])->stretch();
 
 		cout << "\nEvent after Jane leaves:\n";
 		events[i]->list(); // List the people remaining
