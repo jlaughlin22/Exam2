@@ -67,7 +67,7 @@ public:
 	*/
 	void remove(std::list<std::string>::iterator it) {
 		//FIXME 1d: someone's getting out of hand. Ushers have asked them to leave.
-		std::cout << *it << " has been asked to leave.\n";
+		//std::cout << *it << " has been asked to leave.\n";
 		stadium.remove(*it);
 	}
 
@@ -77,7 +77,7 @@ public:
 	void chant() {
 		std::cout << "\tThe crowd has started to chant!" << std::endl;
 		for (std::list<std::string>::iterator i = stadium.begin(); i != stadium.end(); i++) {
-			std::cout << '\t' << *i << " says 'boom boom clap!'" << std::endl;
+			std::cout << "\t\t" << *i << " says 'boom boom clap!'" << std::endl;
 		}
 	}
 };

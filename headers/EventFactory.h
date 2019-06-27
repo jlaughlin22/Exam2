@@ -26,7 +26,7 @@ public:
 		else if (type == "baseball") { // Creates a baseball game
 			return new BaseballEvent(hometeam, visitingteam);
 		}
-		else if (type == "esport") { // Creates a esports game
+		else if (type == "esport") { // Creates an esports game
 			return new EsportsEvent(hometeam, visitingteam);
 		}  
 		else

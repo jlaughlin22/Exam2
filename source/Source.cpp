@@ -58,7 +58,7 @@ int main()
 		
 		//FIXME 5c: if this is your event, include a call to your event's special behavior
 		if (typeid(EsportsEvent) == typeid(*events[i]))
-			dynamic_cast<EsportsEvent *>(events[i])->stretch();
+			dynamic_cast<EsportsEvent *>(events[i])->cheer();
 
 		cout << "\nEvent after Jane leaves:\n";
 		events[i]->list(); // List the people remaining
