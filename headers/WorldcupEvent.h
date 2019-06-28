@@ -43,7 +43,7 @@ public:
 	void list() {
 		std::cout << "Home Team: " << hometeam << "\n"; // Displays the name of the home team
 		std::cout << "Visiting Team: " << visitingteam << "\n"; // Displays the name of the visiting team
-		std::cout << "List of eventGoers: \n"; // Displays eventgoers
+		std::cout << "List of people attending: \n"; // Displays eventgoers
 		for (std::list<std::string>::iterator i = stadium.begin(); i != stadium.end(); i++){ // Iterates through the stadium list
 			std::cout << *i << std::endl; // Displays the name of the person the iterator is pointing at
 		}
@@ -53,7 +53,6 @@ public:
 	* Remove the person identified by the iterator from the event
 	*/
 	void remove(std::list<std::string>::iterator it) {
-		//std::cout << *it << " has been asked to leave.\n";
 		stadium.remove(*it); // removes the person iterator it is pointing at
 	}
 

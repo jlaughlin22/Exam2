@@ -43,7 +43,7 @@ public:
 	void list() {
 		std::cout << "Home Team: " << hometeam << "\n"; // Displays the home teams name
 		std::cout << "Visiting Team: " << visitingteam << "\n"; // Displays the visiting teams name
-		std::cout << "List of eventGoers: \n"; // Lists the people attending the event
+		std::cout << "List of people attending: \n"; // Lists the people attending the event
         for (std::list<std::string>::iterator i = stadium.begin(); i != stadium.end(); i++){ // Iterate through the stadium list
 			std::cout << *i << std::endl; // Displays name of person in list
 		}
