@@ -1,3 +1,8 @@
+//Exam 2
+//CS273
+//Edited by: Jonathan Laughlin
+//last edited: 6/28/19
+
 #ifndef _ESPORTS_EVENT_H_
 #define _ESPORTS_EVENT_H_
 
@@ -61,9 +66,14 @@ public:
 	 * Have Esports game attendees cheer for thier team
 	 */
 	void cheer() {
-		std::cout << "\tThere was just an amazing play!" << std::endl;
+		std::cout << "\tWhat an amazing shot!" << std::endl;
 		for (std::list<std::string>::iterator i = arena.begin(); i != arena.end(); i++) {
-			std::cout << "\t\t" << *i << " stands up and cheers for their team!" << std::endl;
+			if( rand()%2 == 0 ){//random cheer for team
+				std::cout << "\t\t" << *i << " stands up and cheers for team EnVyUs!" << std::endl;//EnVyUs cheer
+			}else{
+				std::cout << "\t\t" << *i << " stands up and cheers for TSM!" << std::endl;//TSM cheer
+
+			}
 		}
 	}
 };

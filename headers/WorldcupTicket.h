@@ -1,3 +1,6 @@
+//Exam 2
+//CS273
+
 #ifndef _WORLDCUP_TICKET_H_
 #define _WORLDCUP_TICKET_H_
 

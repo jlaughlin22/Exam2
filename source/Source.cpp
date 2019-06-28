@@ -1,3 +1,8 @@
+//Exam 2
+//CS273
+//Edited by: Jonathan Laughlin
+//last edited: 6/28/19
+
 /**
 * CS-273 Exam 2 Summer 2018
 * Who doesn't like sports ?!
@@ -10,6 +15,7 @@
 #include "Event.h"
 #include "EventTicket.h"
 #include "EventFactory.h"
+#include <ctime>
 
 using std::cout;
 using std::endl;
@@ -18,8 +24,7 @@ const int EVENT_COUNT = 3;
 
 int main()
 {
-	// FIXME 5: Create a third kind of event, and test it 
-
+	srand(time(NULL));
 	Event* events[EVENT_COUNT]; //Create a worldcup match and a baseball game
 	events[0] = EventFactory::factory("worldcup", "germany", "mexico"); // Create a worldcup match with the event factory
 	events[1] = EventFactory::factory("baseball", "everett", "spokane"); // Creates a baseball game with the event factory

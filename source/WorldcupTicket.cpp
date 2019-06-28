@@ -1,3 +1,6 @@
+//Exam 2
+//CS273
+
 #include "WorldcupTicket.h"
 #include "WorldcupEvent.h"
 

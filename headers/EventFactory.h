@@ -1,3 +1,8 @@
+//Exam 2
+//CS273
+//Edited by: Jonathan Laughlin
+//last edited: 6/28/19
+
 #ifndef _EVENT_FACTORY_H_
 #define _EVENT_FACTORY_H_
 
