@@ -15,17 +15,14 @@ class WorldcupEvent : public Event
 {
 private:
 	std::list<std::string> stadium; // Data structure for containing the event goers in this worldcup event
-	std::string hometeam;
-	std::string visitingteam;
+	std::string hometeam; // Contains the name of the home team 
+	std::string visitingteam; // Contains the name of the visiting team 
 
 	/**
 	* Constructor for creating a WorldcupEvent
 	*/
 	WorldcupEvent(std::string home, std::string visiting): hometeam(home), visitingteam(visiting){}
-		/**
-		 *  FIXME 1a:
-		 *    store the home team and visiting team names
-		 */
+
 	friend class EventFactory;
 
 public:
@@ -35,30 +32,20 @@ public:
 	* @param name the name of the event goer
 	*/
 	EventTicket * add(std::string name) {
-		
-		//* FIXME 1b:
-		//*   Pseudo-code
-		//*    1. add name to the front of stadium
-		stadium.push_front(name);
-		//*    2. get iterator to the front of the stadium (this points to the recently added event goer)
-		std::list<std::string>::iterator eventGoer = stadium.begin();
-		//*    3. create a new worldcup ticket (WorldcupTicket) with its constructor
-		//*            Pass to the constructor "this" event, and the iterator from step 2
-		//*    4. return this new event ticket
-		return new WorldcupTicket(this, eventGoer);
-
+		stadium.push_front(name); // Adds the name to the front of the stadium
+		std::list<std::string>::iterator eventGoer = stadium.begin(); // Sets an iterator that points the the front of the stadium list
+		return new WorldcupTicket(this, eventGoer); // Creates a new WorldcupTicket and returns it
 	}
 
 	/**
 	* Show the event's home team and visiting team, then list all the persons currently in the event
 	*/
 	void list() {
-		// FIXME 1c: Show the event's home team and visiting team, then iterate through all the persons here.
-		std::cout << "Home Team: " << hometeam << "\n";
-		std::cout << "Visiting Team: " << visitingteam << "\n";
-		std::cout << "List of eventGoers: \n";
-		for (std::list<std::string>::iterator i = stadium.begin(); i != stadium.end(); i++){
-			std::cout << *i << std::endl;
+		std::cout << "Home Team: " << hometeam << "\n"; // Displays the name of the home team
+		std::cout << "Visiting Team: " << visitingteam << "\n"; // Displays the name of the visiting team
+		std::cout << "List of eventGoers: \n"; // Displays eventgoers
+		for (std::list<std::string>::iterator i = stadium.begin(); i != stadium.end(); i++){ // Iterates through the stadium list
+			std::cout << *i << std::endl; // Displays the name of the person the iterator is pointing at
 		}
 	}
 
@@ -66,9 +53,8 @@ public:
 	* Remove the person identified by the iterator from the event
 	*/
 	void remove(std::list<std::string>::iterator it) {
-		//FIXME 1d: someone's getting out of hand. Ushers have asked them to leave.
 		//std::cout << *it << " has been asked to leave.\n";
-		stadium.remove(*it);
+		stadium.remove(*it); // removes the person iterator it is pointing at
 	}
 
 	/**
@@ -76,8 +62,8 @@ public:
 	 */
 	void chant() {
 		std::cout << "\tThe crowd has started to chant!" << std::endl;
-		for (std::list<std::string>::iterator i = stadium.begin(); i != stadium.end(); i++) {
-			std::cout << "\t\t" << *i << " says 'boom boom clap!'" << std::endl;
+		for (std::list<std::string>::iterator i = stadium.begin(); i != stadium.end(); i++) { // Iterates through the stadium list
+			std::cout << "\t\t" << *i << " says 'boom boom clap!'" << std::endl; // Displays what the person does
 		}
 	}
 };

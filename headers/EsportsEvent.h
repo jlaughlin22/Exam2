@@ -8,7 +8,6 @@
 #include "Event.h"
 #include "EsportsTicket.h"
 
-// FIXME 3: Update EventFactory::factory() to allow it to be the ONLY method for creating a BaseballEvent
 /**
 * EsportsEvent is derived from Event
 */

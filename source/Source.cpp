@@ -22,9 +22,8 @@ int main()
 
 	Event* events[EVENT_COUNT]; //Create a worldcup match and a baseball game
 	events[0] = EventFactory::factory("worldcup", "germany", "mexico"); // Create a worldcup match with the event factory
-	events[1] = EventFactory::factory("baseball", "everett", "spokane");
-	//FIXME 5a: generate an event object for your new kind of event
-	events[2] = EventFactory::factory("esport", "TSM", "EnVyUs");
+	events[1] = EventFactory::factory("baseball", "everett", "spokane"); // Creates a baseball game with the event factory
+	events[2] = EventFactory::factory("esport", "TSM", "EnVyUs"); // Create a esports game with the event factory
 
 	//Let's go through and test each one
 	for (int i=0; i<EVENT_COUNT; i++) {
@@ -37,11 +36,11 @@ int main()
 		EventTicket *ticket6 = events[i]->add("Jake");
 
 		if (typeid(WorldcupEvent) == typeid(*events[i]))
-			cout << "\n\tThe following event is a Worldcup match." << endl;
+			cout << "\n\tThe following event is a Worldcup match." << endl; // display what event type it is
 		if (typeid(BaseballEvent) == typeid(*events[i]))
-			cout << "\n\tThe following event is a Baseball game." << endl;
+			cout << "\n\tThe following event is a Baseball game." << endl; // display what event type it is
 		if (typeid(EsportsEvent) == typeid(*events[i]))
-			cout << "\n\tThe following event is an Esports game." << endl;
+			cout << "\n\tThe following event is an Esports game." << endl; // display what event type it is
 
 		cout << "\nEvent before Jane leaves\n";
 		events[i]->list(); // List the people currently at the event
@@ -50,15 +49,13 @@ int main()
 		ticket2->leave();
 
 		if (typeid(WorldcupEvent) == typeid(*events[i]))
-			dynamic_cast<WorldcupEvent*>(events[i])->chant();
+			dynamic_cast<WorldcupEvent*>(events[i])->chant(); // if event is worldcup game everyone chant
 		
-		//FIXME 5b: if this is a baseball game, include a call to have attendees at the baseball game stretch
 		if (typeid(BaseballEvent) == typeid(*events[i]))
-			dynamic_cast<BaseballEvent *>(events[i])->stretch();
+			dynamic_cast<BaseballEvent *>(events[i])->stretch(); // if event is baseball everyone stretch
 		
-		//FIXME 5c: if this is your event, include a call to your event's special behavior
 		if (typeid(EsportsEvent) == typeid(*events[i]))
-			dynamic_cast<EsportsEvent *>(events[i])->cheer();
+			dynamic_cast<EsportsEvent *>(events[i])->cheer(); // if event is esports everyone cheers
 
 		cout << "\nEvent after Jane leaves:\n";
 		events[i]->list(); // List the people remaining

@@ -23,11 +23,11 @@ public:
 		if (type == "worldcup") {
 			return new WorldcupEvent(hometeam, visitingteam); // Creates a worldcup match
 		} 
-		else if (type == "baseball") { // Creates a baseball game
-			return new BaseballEvent(hometeam, visitingteam);
+		else if (type == "baseball") { 
+			return new BaseballEvent(hometeam, visitingteam); // Creates a baseball game
 		}
-		else if (type == "esport") { // Creates an esports game
-			return new EsportsEvent(hometeam, visitingteam);
+		else if (type == "esport") {
+			return new EsportsEvent(hometeam, visitingteam); // Creates an esports game
 		}  
 		else
 			throw std::invalid_argument("unknown type of event");
